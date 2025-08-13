@@ -14,7 +14,7 @@ export default function Ourservices() {
         </span>
         <span className="text-3xl font-medium">Our Services</span>
       </div>
-      <div className="rounded mt-10 mb-10">
+      <div className="rounded mt-10 mb-10 px-2">
         <h1 className="text-3xl font-bold opacity-70">
           Dental Services in SURKHET, NEPAL
         </h1>
@@ -25,10 +25,10 @@ export default function Ourservices() {
           <li>Oral and Maxillofacial Surgery</li>
           <li>Pediatric / Kids Dentistry</li>
           <li>Gum treatment</li>
-          <li>Oral Appliances (Bleaching Trais,Retainers)</li>
+          <li>Oral Appliances </li>
         </ol>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
