@@ -33,7 +33,6 @@ const Dashboardboard = () => {
         setLoading(false);
       }
     };
-    element.addEventListener("touchstart", handleTouchStart, { passive: true });
     fetchdata();
   }, []);
 

@@ -12,7 +12,6 @@ const ProtectedRoute = () => {
     } else {
       setIsAuthenticated(false);
     }
-    element.addEventListener("touchstart", handleTouchStart, { passive: true });
 
     setIsLoading(false);
   }, []);

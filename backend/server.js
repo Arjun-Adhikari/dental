@@ -19,24 +19,21 @@ app.use(express.json());
 // app.use(cors());
 
 app.use(
-    cors({
-        origin: (origin, callback) => {
-            const allowedOrigins = [
-                "http://localhost:5173"
-            ];
-            if (!origin || allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
-            }
-        },
-        credentials: true,
-        methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization", "Set-Cookie"],
-        exposedHeaders: ["Set-Cookie"]
-    })
+  cors({
+    origin: (origin, callback) => {
+      const allowedOrigins = ["http://localhost:5173"];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "Set-Cookie"],
+    exposedHeaders: ["Set-Cookie"],
+  })
 );
-
 
 const MongoStore = new connectMongo({
   mongoUrl: process.env.MONGODBURL,
@@ -220,8 +217,14 @@ app.post("/appointment", async (req, res) => {
 });
 
 app.post("/signup", async (req, res) => {
+  console.log("This is signup request");
   try {
-    console.log("the request is coming here");
+    const userCount = await loginSchema.countDocuments();
+    if (userCount > 0) {
+      return res.status(403).json({
+        message: "Signup not allowed. An account has been already created.",
+      });
+    }
     const { username, gmail, password } = req.body;
     if (!username || !gmail || !password) {
       return res
@@ -234,6 +237,7 @@ app.post("/signup", async (req, res) => {
         gmail,
         password: hashedPass,
       });
+
       console.log("new user", newUser);
       await newUser.save();
       res.status(201).json({ message: "user registered" });
