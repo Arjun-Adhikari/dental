@@ -21,7 +21,10 @@ app.use(express.json());
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://localhost:5173"];
+      const allowedOrigins = [
+        // "http://localhost:5173/",
+        "https://dental-nu-jade.vercel.app/",
+      ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -49,8 +52,8 @@ app.use(
     saveUninitialized: false,
     proxy: true,
     Cookie: {
-      // secure:true,
-      httpOnly: true,
+      secure:true,
+      // httpOnly: true,
       sameSite: "none",
       maxAge: 1000 * 60 * 60 * 24 * 7,
       path: "/",
