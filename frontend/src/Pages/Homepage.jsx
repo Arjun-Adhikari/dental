@@ -4,7 +4,7 @@ import Ourteam from "../components/ourteam/ourteam";
 import Customersno from "../components/customersno/Customersno";
 import Realworks from "../components/realworks/Realworks";
 import Location from "../components/location/Location";
-import Footer from "../components/footer/footer";
+import Footer from "../components/footer/Footer";
 import Opentime from "../components/belownav/opentime";
 import Abovenav from "../components/abovenav/Abovenav";
 import Phonelogo from "../components/phonelogo/Phonelogo";
