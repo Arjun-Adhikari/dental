@@ -5,13 +5,13 @@ export default function Body() {
     <Element name="Home" className="section">
       <div className="bg-blue-500 opacity-100 relative -z-10">
         <img className="-z-10" src="backgroundimg.jpg" alt="backgroundimg" />
-        <h1 className="absolute top-25 md:top-60 md:left-25 px-5 text-2xl z-10 md:text-4xl">
+        <h1 className="absolute top-25 md:top-60 md:left-25 px-5 text-2xl z-10 md:text-4xl font-bold">
           Swargadwari Dental Care Home{" "}
           <span className="text-[#000080] font-bold z-10">
             <Typewriter
               words={[
                 "Birendranagar 6, Surkhet",
-                "Opposite side of Maya Nursing Home",
+                "Located near Maya Nursing Home and joti Bikash Bank",
               ]}
               loop={Infinity}
               cursor
