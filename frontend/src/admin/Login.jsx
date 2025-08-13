@@ -26,7 +26,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8080/login", {
+      const response = await axios.post("https://dental-nu-jade.vercel.app/login", {
         username: formData.username,
         password: formData.password,
       });

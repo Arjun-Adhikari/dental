@@ -23,7 +23,7 @@ const Appointment = () => {
       setMessage("");
       setError("");
 
-      const response = await axios.post("http://localhost:8080/appointment", {
+      const response = await axios.post("https://dental-nu-jade.vercel.app/appointment", {
         name: formData.name,
         phone: formData.phone,
         email: formData.email,

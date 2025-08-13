@@ -26,7 +26,7 @@ const Member = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8080/api/addmember", {
+      const response = await axios.post("https://dental-nu-jade.vercel.app/api/addmember", {
         speciality: formData.speciality,
         name: formData.name,
         tag: formData.tag,

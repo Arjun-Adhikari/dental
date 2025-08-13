@@ -20,7 +20,7 @@ const Signup = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8080/signup", {
+      const response = await axios.post("https://dental-nu-jade.vercel.app/signup", {
         gmail: formData.gmail,
         username: formData.username,
         password: formData.password,

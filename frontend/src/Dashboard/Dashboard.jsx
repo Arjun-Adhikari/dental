@@ -15,7 +15,7 @@ const Dashboardboard = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get("http://localhost:8080/dashboard");
+        const response = await axios.get("https://dental-nu-jade.vercel.app/dashboard");
         const data = response.data;
         if (Array.isArray(data)) {
           setEachData(data);
@@ -52,7 +52,7 @@ const Dashboardboard = () => {
     console.log(dialogId);
     try {
       const response = await axios.delete(
-        `http://localhost:8080/deldialog/${dialogId}`
+        `https://dental-nu-jade.vercel.app/deldialog/${dialogId}`
       );
 
       // Use response.status for the status code check

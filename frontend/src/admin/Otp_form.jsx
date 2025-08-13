@@ -6,7 +6,7 @@ const Otp_form = () => {
   // const [isttrue, setIstrue] = useState(false);
   const navigate = useNavigate();
   const handleotp = async () => {
-    const response = await axios.post("http://localhost:8080/otp/generate");
+    const response = await axios.post("https://dental-nu-jade.vercel.app/otp/generate");
   };
 
   const handleChange = (e) => {
@@ -15,7 +15,7 @@ const Otp_form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const response = axios.post("http://localhost:8080/otp/otpcheck", {
+    const response = axios.post("https://dental-nu-jade.vercel.app/otp/otpcheck", {
       Otp,
     });
     if (response.data == 200) {
